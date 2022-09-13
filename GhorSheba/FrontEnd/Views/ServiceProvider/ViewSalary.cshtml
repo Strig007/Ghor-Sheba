@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BEL.UserSalariesModel>
+
+@{
+    ViewBag.Title = "ViewSalary";
+    Layout = "~/Views/Shared/HomePageLayout.cshtml";
+}
+
+<h2>View Salary</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.salary_amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_paid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Due)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary_amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_paid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Due)
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/ServiceProvider/EditServiceProvider" class="btn btn-primary">Back to Profile</a>
